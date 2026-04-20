@@ -1,5 +1,5 @@
 Run:
-  python -m awesome_harness.demo compare
+  python3 -m awesome_harness.demo compare
 
 Expected highlights:
 

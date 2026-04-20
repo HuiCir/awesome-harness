@@ -46,7 +46,7 @@ export OPENAI_MODEL=gpt-5.4
 ### 1. 常规设计 vs harness 设计
 
 ```bash
-python -m awesome_harness.demo compare
+python3 -m awesome_harness.demo compare
 ```
 
 你会看到常规 shell-agent 把 cleanup 误扩展成 `rm -rf *`，导致临时项目被删到只剩报告；harness-agent 会拒绝 broad recursive delete，只允许删除 `tmp/cache.txt`。
@@ -54,7 +54,7 @@ python -m awesome_harness.demo compare
 ### 2. 只运行离线 harness
 
 ```bash
-python -m awesome_harness.demo simulated
+python3 -m awesome_harness.demo simulated
 ```
 
 这个模式使用 scripted model，不调用 API，适合教学和测试 harness 流程。
@@ -62,7 +62,7 @@ python -m awesome_harness.demo simulated
 ### 3. 接入真实 OpenAI Responses API
 
 ```bash
-python -m awesome_harness.demo openai --model "${OPENAI_MODEL:-gpt-5.4}"
+python3 -m awesome_harness.demo openai --model "${OPENAI_MODEL:-gpt-5.4}"
 ```
 
 这个模式会把真实工具 schema 提供给模型。模型如果发起 function call，harness 会：
