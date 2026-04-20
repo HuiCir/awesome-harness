@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awesome-harness"
+version = "0.1.0"
+description = "Teaching repo for Codex-style agent harness design."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "openai>=2.0.0",
+]
+
+[project.scripts]
+awesome-harness = "awesome_harness.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
